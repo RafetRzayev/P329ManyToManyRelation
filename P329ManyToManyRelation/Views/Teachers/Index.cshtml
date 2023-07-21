@@ -1,0 +1,18 @@
+﻿@using P329ManyToManyRelation.DAL.Entities;
+@model List<Teacher>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@foreach (var item in Model)
+{
+    <p>@item.Name</p>
+    
+    @foreach (var teacherGroup in item.TeacherGroups)
+    {
+        <p>---@teacherGroup.Group.Name</p>
+    }
+    <a asp-action="update" asp-route-id="@item.Id">Update</a>
+}

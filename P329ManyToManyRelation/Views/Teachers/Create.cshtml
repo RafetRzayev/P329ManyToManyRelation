@@ -1,0 +1,13 @@
+﻿@model TeacherCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post">
+    <input asp-for="Name" placeholder="Name" class="form-control" />
+    <select asp-for="GroupIds" asp-items="Model.Groups" placeholder="Name" class="form-control"></select>
+    <button type="submit">Create</button>
+</form>
